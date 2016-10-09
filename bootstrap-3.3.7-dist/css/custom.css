@@ -1,6 +1,19 @@
 body
 {
+
 padding-top: 20px;
+}
+
+img.pad-top
+{
+  padding-top: 7em;
+}
+ol.pad-top{
+  padding-top: 7em;
+}
+div.pad-top{
+  padding-top: 12em;
+
 }
 h1,h2,h3,h4,h5,h6
 {
@@ -14,4 +27,10 @@ ul.nodot
 p.pad-below
 {
  padding-bottom: 50px;
+}
+iframe, object, embed {
+    max-width: 100%;
+}
+.border iframe{
+  display: block;
 }
