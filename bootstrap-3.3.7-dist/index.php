@@ -1,5 +1,3 @@
-<<<<<<< HEAD:bootstrap-3.3.7-dist/Lab 1 Darkly Carousel.html
-
 <!DOCTYPE html>
 <head>
 <meta charset="utf-8">
@@ -71,7 +69,8 @@
         <button type="submit" class="btn btn-default">Submit</button>
       </form>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Link</a></li>
+        <li><a href="Form.php">Form</a></li>
+        <li><a href="plots.php">Plots</a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
           <ul class="dropdown-menu">
