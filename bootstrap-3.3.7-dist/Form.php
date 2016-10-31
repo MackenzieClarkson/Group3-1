@@ -88,19 +88,22 @@
 
 <div class="container">
 
-<form class="form-horizontal" name="signinForm" id="signinForm">
+<form method="post" action="form.php"class="form-horizontal" name="signinForm" id="signinForm">
+
   <div class="form-group">
     <label for="username" class="col-sm-2 control-label">Name</label>
     <div class="col-sm-10">
-    <input type="text" class="form-control" id="username" name="username" placeholder="Jane Doe">
+      <input type="text" class="form-control" id="username" name="username" placeholder="Jane Doe">
+    </div>
   </div>
-  </div>
+
   <div class="form-group">
     <label for="email" class="col-sm-2 control-label">Email</label>
     <div class="col-sm-10">
       <input type="email" class="form-control" id="email" name="email" placeholder="Email">
     </div>
   </div>
+
   <div class="form-group">
     <label for="password" class="col-sm-2 control-label">Password</label>
     <div class="col-sm-10">
@@ -153,7 +156,7 @@
 
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
-      <button type="submit" value="submit" class="btn btn-primary" >Sign in</button>
+      <button type="submit"  name="formSubmit"class="btn btn-primary" >Sign in</button>
     </div>
   </div>
 </form>
@@ -259,6 +262,53 @@
           });
       });
     </script>
+    <?php
+      if($_POST['formSubmit'] == "Submit")
+      {
 
+
+        $db = new mysqli('localhost', 'root', '', 'lab');
+
+        // TODO You must process the POST data from the form and then set the variables
+        // below to be inserted in the database
+
+        // You should see sucess if you can connect
+        if($db->connect_errno > 0){
+            echo "ERROR";
+            die('Unable to connect to database [' . $db->connect_error . ']');
+        }
+        else {
+            echo "SUCCESS";
+        }
+
+        // Insert sample data into the database
+        $sql = $db->prepare("INSERT INTO sample(name, email, password, dropdown, checkbox, " .
+                            "radio, textarea) VALUES (?, ?, ?, ?, ?, ?, ?)");
+
+        $name = $_POST['username'];
+        $email = $_POST['email'];
+        $insecure_pass = $_POST['password']; // This password needs to be securely hashed
+        $dropdown = $_POST['choose1']; // This is one of the dropdown selection options
+        $checkbox = $_POST['inlineCheckbox[]']; // This is a boolean value 0 or 1
+        $radio = $_POST['inlineRadioOptions'];  // This is an integer value
+        $message = $_POST['text1'];
+
+        // Securely hash the password
+        $password = password_hash($insecure_pass, PASSWORD_DEFAULT);
+
+        // Bind the parameters to the SQL query above, s is a string i is an integer
+        $sql->bind_param("ssssiis", $name, $email, $password, $dropdown, $checkbox, $radio, $message);
+
+        // Execute the query, inserting the data
+        $sql->execute();
+
+        // Close the connection
+        $sql->close();
+        $db->close();
+
+
+
+    }
+    ?>
   </body>
 </html>
