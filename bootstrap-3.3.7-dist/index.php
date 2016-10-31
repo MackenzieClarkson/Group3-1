@@ -45,10 +45,10 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li ><a href="#head2">Trending <span class="sr-only">(current)</span></a></li>
-        <li><a href="#head1">News</a></li>
-        <li><a href="#head3">Hightlights</a></li>
-        <li><a href="#head4">Stats</a></li>
+        <li ><a href="index.php#head2">Trending <span class="sr-only">(current)</span></a></li>
+        <li><a href="index.php#head1">News</a></li>
+        <li><a href="index.php#head3">Hightlights</a></li>
+        <li><a href="index.php#head4">Stats</a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
           <ul class="dropdown-menu">
