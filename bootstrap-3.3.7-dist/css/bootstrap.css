@@ -35,6 +35,7 @@ section,
 summary {
   display: block;
 }
+
 audio,
 canvas,
 progress,
@@ -1174,6 +1175,9 @@ hr {
 }
 [role="button"] {
   cursor: pointer;
+}
+h2{
+ color: #265a88;
 }
 h1,
 h2,
@@ -3061,7 +3065,7 @@ fieldset[disabled] a.btn {
   pointer-events: none;
 }
 .btn-default {
-  color: #ffffff;
+  color: white !important;
   background-color: #464545;
   border-color: #464545;
 }
@@ -4966,14 +4970,25 @@ a.badge:focus {
   color: inherit;
   background-color: #303030;
 }
-.jumbotron h1,
-.jumbotron .h1 {
-  color: inherit;
+.jumbotron h2,
+.jumbotron .h2 {
+  color: #265a88;
+  font-weight: bolder !important;
+}
+.jumbotron a{
+color:#265a88;
+}
+.jumbotron tr{
+color: white;
+}
+.jumbotron table{
+background color: #265a88 !important;
 }
 .jumbotron p {
   margin-bottom: 15px;
   font-size: 23px;
   font-weight: 200;
+  color: white;
 }
 .jumbotron > hr {
   border-top-color: #161616;
