@@ -107,11 +107,12 @@
       <input type="password" class="form-control" id="password" name="password" placeholder="Password">
     </div>
   </div>
+
   <div class="form-group">
     <label for="choose1" class="col-sm-2 control-label">Favourite Sport</label>
     <div class="col-sm-10">
-      <select class="form-control" id="choose1">
-        <option value="0">Favourite Sport</option>
+      <select class="form-control" id="choose1" name="choose1">
+        <option>Favourite Sport</option>
         <option value="1">Hockey</option>
         <option value="2">Baseball</option>
         <option value="3">Basketball</option>
@@ -119,38 +120,33 @@
       </select>
     </div>
   </div>
+
   <div class="form-group">
-    <div class="col-sm-offset-2 col-sm-10">
-      <label class="checkbox-inline" >
-        <input type="checkbox" id="inlineCheckbox1" value="option1"> 1
-      </label>
-      <label class="checkbox-inline">
-        <input type="checkbox" id="inlineCheckbox2" value="option2"> 2
-      </label>
-      <label class="checkbox-inline">
-        <input type="checkbox" id="inlineCheckbox3" value="option3"> 3
-      </label>
+      <label for="inlineCheckbox[]" class="col-sm-2 control-label">Favourite Sport</label>
+      <div class="col-sm-10" >
+        <div class="checkbox">
+        <label><input type="checkbox" name="inlineCheckbox[]" id="inlineCheckbox[]" value="option1"> 1 </label>
+        <label><input type="checkbox" name="inlineCheckbox[]" id="inlineCheckbox[]" value="option2"> 2 </label>
+        <label><input type="checkbox" name="inlineCheckbox[]" id="inlineCheckbox[]" value="option3"> 3 </label>
+        </div>
+      </div>
+  </div>
+
+  <div class="form-group">
+    <label for="inlineRadioOptions" class="col-sm-2 control-label">Favourite Sport</label>
+    <div class="col-sm-10">
+      <div class="radio">
+      <label><input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> 1 </label>
+      <label><input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> 2 </label>
+      <label><input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3"> 3 </label>
+      </div>
     </div>
   </div>
-  <div class="form-group">
-    <div class="col-sm-offset-2 col-sm-10">
-      <label class="radio-inline">
-        <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> 1
-      </label>
-      <label class="radio-inline">
-        <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> 2
-      </label>
-      <label class="radio-inline">
-        <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3"> 3
-      </label>
-    </div>
-  </div>
+
   <div class="form-group">
     <label for="text1" class="col-sm-2 control-label">Comments</label>
     <div class="col-sm-10">
-    <textarea id="text1" class="form-control" rows="3"></textarea>
-
-
+    <textarea name="text1" id="text1" class="form-control" rows="3"></textarea>
     </div>
   </div>
 
@@ -202,6 +198,7 @@
                           notEmpty: {
                               message: 'The username is required'
                           },
+
                       }
                   },
                   email: {
@@ -215,8 +212,45 @@
                     validators: {
                       notEmpty: {
                         message: 'The password is required'
+                      },
+                      stringLength: {
+                       min: 6,
+                       max: 30,
+                       message: 'The name must be more than 6 and less than 30 characters long'
+                     },
+                     regexp: {
+                        regexp: /^[a-zA-Z0-9_]+$/,
+                        message: 'The name can only consist of alphabetical, number and underscore'
                       }
 
+                    }
+                  },
+                  'inlineCheckbox[]': {
+                    validators: {
+                      notEmpty: {
+                        message: 'The size is required'
+                      }
+                    }
+                  },
+                  inlineRadioOptions: {
+                    validators: {
+                      notEmpty: {
+                        message: 'The availability option is required'
+                      }
+                    }
+                  },
+                  choose1: {
+                    validators: {
+                      notEmpty: {
+                        message: 'The availability option is required'
+                      }
+                    }
+                  },
+                  text1: {
+                    validators: {
+                      notEmpty: {
+                        message: 'The availability option is required'
+                      }
                     }
                   }
 
