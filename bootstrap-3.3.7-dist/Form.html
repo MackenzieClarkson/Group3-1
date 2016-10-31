@@ -88,7 +88,7 @@
 
 <div class="container">
 
-<form method="post" action="form.php"class="form-horizontal" name="signinForm" id="signinForm">
+<form class="form-horizontal" name="signinForm" id="signinForm">
 
   <div class="form-group">
     <label for="username" class="col-sm-2 control-label">Name</label>
@@ -262,53 +262,6 @@
           });
       });
     </script>
-    <?php
-      if($_POST['formSubmit'] == "Submit")
-      {
 
-
-        $db = new mysqli('localhost', 'root', '', 'lab');
-
-        // TODO You must process the POST data from the form and then set the variables
-        // below to be inserted in the database
-
-        // You should see sucess if you can connect
-        if($db->connect_errno > 0){
-            echo "ERROR";
-            die('Unable to connect to database [' . $db->connect_error . ']');
-        }
-        else {
-            echo "SUCCESS";
-        }
-
-        // Insert sample data into the database
-        $sql = $db->prepare("INSERT INTO sample(name, email, password, dropdown, checkbox, " .
-                            "radio, textarea) VALUES (?, ?, ?, ?, ?, ?, ?)");
-
-        $name = $_POST['username'];
-        $email = $_POST['email'];
-        $insecure_pass = $_POST['password']; // This password needs to be securely hashed
-        $dropdown = $_POST['choose1']; // This is one of the dropdown selection options
-        $checkbox = $_POST['inlineCheckbox[]']; // This is a boolean value 0 or 1
-        $radio = $_POST['inlineRadioOptions'];  // This is an integer value
-        $message = $_POST['text1'];
-
-        // Securely hash the password
-        $password = password_hash($insecure_pass, PASSWORD_DEFAULT);
-
-        // Bind the parameters to the SQL query above, s is a string i is an integer
-        $sql->bind_param("ssssiis", $name, $email, $password, $dropdown, $checkbox, $radio, $message);
-
-        // Execute the query, inserting the data
-        $sql->execute();
-
-        // Close the connection
-        $sql->close();
-        $db->close();
-
-
-
-    }
-    ?>
   </body>
 </html>
