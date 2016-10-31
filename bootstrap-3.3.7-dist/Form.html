@@ -12,7 +12,7 @@
     <link href="css/carousel.css" rel="stylesheet" type="text/css">
 
     <link rel="stylesheet" type="text/css" href="css/custom.css">
-
+    <link href="css/formValidation.min.css" rel="stylesheet">
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
 
@@ -40,16 +40,16 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Toronto Sports Fans</a>
+      <a class="navbar-brand" href="index.html">Toronto Sports Fans</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li ><a href="#head2">Trending <span class="sr-only">(current)</span></a></li>
-        <li><a href="#head1">News</a></li>
-        <li><a href="#head3">Hightlights</a></li>
-        <li><a href="#head4">Stats</a></li>
+        <li ><a href="index.html#head2">Trending <span class="sr-only">(current)</span></a></li>
+        <li><a href="index.html#head1">News</a></li>
+        <li><a href="index.html#head3">Highlights</a></li>
+        <li><a href="index.html#head4">Stats</a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
           <ul class="dropdown-menu">
@@ -88,34 +88,34 @@
 
 <div class="container">
 
-<form class="form-horizontal" name="mainform" onsubmit="return validateForm()">
+<form class="form-horizontal" name="signinForm" id="signinForm">
   <div class="form-group">
-    <label for="exampleInputName2" class="col-sm-2 control-label">Name</label>
+    <label for="username" class="col-sm-2 control-label">Name</label>
     <div class="col-sm-10">
-    <input type="text" class="form-control" id="exampleInputName2" placeholder="Jane Doe" required>
+    <input type="text" class="form-control" id="username" name="username" placeholder="Jane Doe">
   </div>
   </div>
   <div class="form-group">
-    <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+    <label for="email" class="col-sm-2 control-label">Email</label>
     <div class="col-sm-10">
-      <input type="email" class="form-control" id="inputEmail3" placeholder="Email" required>
+      <input type="email" class="form-control" id="email" name="email" placeholder="Email">
     </div>
   </div>
   <div class="form-group">
-    <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+    <label for="password" class="col-sm-2 control-label">Password</label>
     <div class="col-sm-10">
-      <input type="password" class="form-control" id="inputPassword3" placeholder="Password" required>
+      <input type="password" class="form-control" id="password" name="password" placeholder="Password">
     </div>
   </div>
   <div class="form-group">
-    <label for="choose1" class="col-sm-2 control-label">choose</label>
+    <label for="choose1" class="col-sm-2 control-label">Favourite Sport</label>
     <div class="col-sm-10">
       <select class="form-control" id="choose1">
-        <option value="0">choose option</option>
-        <option value="1">2</option>
-        <option value="2">3</option>
-        <option value="3">4</option>
-        <option value="4">5</option>
+        <option value="0">Favourite Sport</option>
+        <option value="1">Hockey</option>
+        <option value="2">Baseball</option>
+        <option value="3">Basketball</option>
+        <option value="4">Football</option>
       </select>
     </div>
   </div>
@@ -146,9 +146,9 @@
     </div>
   </div>
   <div class="form-group">
-    <label for="text1" class="col-sm-2 control-label">comment</label>
+    <label for="text1" class="col-sm-2 control-label">Comments</label>
     <div class="col-sm-10">
-    <textarea id="text1" class="form-control" rows="3" required></textarea>
+    <textarea id="text1" class="form-control" rows="3"></textarea>
 
 
     </div>
@@ -157,7 +157,7 @@
 
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
-      <button type="submit" value="submit" class="btn btn-default" >Sign in</button>
+      <button type="submit" value="submit" class="btn btn-primary" >Sign in</button>
     </div>
   </div>
 </form>
@@ -176,37 +176,55 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script>
-    function validateForm() {
-
-    var d = document.getElementById("choose1").value;
-    var e = document.getElementById("inlineCheckbox1").checked;
-    var f = document.getElementById("inlineCheckbox2").checked;
-    var g = document.getElementById("inlineCheckbox3").checked;
-    var h = document.getElementById("inlineRadio1").checked;
-    var i = document.getElementById("inlineRadio2").checked;
-    var j = document.getElementById("inlineRadio3").checked;
 
 
-    if (d<1) {
-        alert("please choose an option from the drop down box");
-        return false;
-    }
-    if (!(e || f || g)) {
-        alert("please select at least one checkbox");
-        return false;
-    }if (!h && !i && !j) {
-        alert("a Radio option must be selected");
-        return false;
-
-    }
-}</script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-    <script src="D:/Users/Macdaddy/Desktop/Web Programming Lab1/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+
     <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
-    <script src="../../assets/js/vendor/holder.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+
+    <script src="js/formValidation.min.js"></script>
+      <script src="js/framework/bootstrap.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+      $(document).ready(function() {
+          $('#signinForm').formValidation({
+              framework: 'bootstrap',
+              icon: {
+                  valid: 'glyphicon glyphicon-ok',
+                  invalid: 'glyphicon glyphicon-remove',
+                  validating: 'glyphicon glyphicon-refresh'
+              },
+              fields: {
+                  username: {
+                      validators: {
+                          notEmpty: {
+                              message: 'The username is required'
+                          },
+                      }
+                  },
+                  email: {
+                    validators: {
+                      notEmpty: {
+                        message: 'The email is required'
+                      },
+                    }
+                  },
+                  password: {
+                    validators: {
+                      notEmpty: {
+                        message: 'The password is required'
+                      }
+
+                    }
+                  }
+
+
+              }
+          });
+      });
+    </script>
+
   </body>
 </html>
