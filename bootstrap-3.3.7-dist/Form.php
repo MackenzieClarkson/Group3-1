@@ -46,7 +46,7 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li ><a href="index.html#head2">Trending <span class="sr-only">(current)</span></a></li>
+        <li ><a href="index.php#head2">Trending <span class="sr-only">(current)</span></a></li>
         <li><a href="index.html#head1">News</a></li>
         <li><a href="index.html#head3">Highlights</a></li>
         <li><a href="index.html#head4">Stats</a></li>
