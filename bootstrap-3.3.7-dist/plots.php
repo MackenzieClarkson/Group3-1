@@ -38,9 +38,8 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li ><a href="index.php#head2">Trending <span class="sr-only">(current)</span></a></li>
-        <li><a href="index.php#head1">News</a></li>
         <li><a href="index.php#head3">Hightlights</a></li>
-        <li><a href="index.php#head4">Stats</a></li>
+     <li><a href="index.php#head4">Stats</a></li>
         <li ><a href="#head2">Trending <span class="sr-only">(current)</span></a></li>
         <li><a href="#head1">News</a></li>
         <li><a href="#head3">Highlights</a></li>
@@ -65,8 +64,7 @@
         <button type="submit" class="btn btn-default">Submit</button>
       </form>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="Form.html">Form</a></li>
-        <li><a href="#">Link</a></li>
+        <li><a href="Form.php">Form</a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
           <ul class="dropdown-menu">
@@ -81,17 +79,7 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
-
 <div class="container">
-  <div class="jumbotron">
-    <div class="row">
-      <div class="col-md-6">
-        <h2>Graph Plot</h2>
-        <div id="divname" style="height: 250px;"></div>
-      </div>
-      <div class="col-md-6">
-        <h2>Donut plot</h2>
-        <div id="donut-example" style="height: 250px;"></div>
   <div class="row">
     <div class="col-md-6">
       <div class="jumbotron ">
@@ -128,17 +116,6 @@
     Morris.Donut({
       element: 'donut-example',
       data: [
-
-    {label: "Hockey", value: 30},
-    {label: "Baseball", value: 12},
-    {label: "Soccer", value: 20},
-    {label: "Basketball", value: 25},
-    {label: "Football", value: 10},
-
-    {label: "Win", value: 2},
-    {label: "Loss", value: 4},
-    {label: "Overtime-loss", value: 3}
-
     {label: "Win", value: 2},
     {label: "Loss", value: 4},
     {label: "Overtime-loss", value: 3}
@@ -157,7 +134,7 @@
     { Game: '4', GF: 2  , GA: 3},
     { Game: '5', GF: 4 , GA: 5},
     { Game: '6', GF: 3 , GA: 7},
-    { Game: '7', GF: 3  , GA: 2},
+    { Game: '7', GF: 3  , GA: 2.0},
     { Game: '8', GF: 1  , GA: 2},
     { Game: '9', GF: 1 , GA: 5}
   ],
