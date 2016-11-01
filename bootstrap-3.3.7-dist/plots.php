@@ -21,7 +21,7 @@
   </head>
   <body>
 <!-- NAVBAR================================================== -->
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-default navbar-fixed-top">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -31,12 +31,16 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Toronto Sports Fans</a>
+      <a class="navbar-brand" href="index.php">Toronto Sports Fans</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
+        <li ><a href="index.php#head2">Trending <span class="sr-only">(current)</span></a></li>
+ -        <li><a href="index.php#head1">News</a></li>
+ -        <li><a href="index.php#head3">Hightlights</a></li>
+ -        <li><a href="index.php#head4">Stats</a></li>
         <li ><a href="#head2">Trending <span class="sr-only">(current)</span></a></li>
         <li><a href="#head1">News</a></li>
         <li><a href="#head3">Highlights</a></li>
@@ -61,7 +65,7 @@
         <button type="submit" class="btn btn-default">Submit</button>
       </form>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Link</a></li>
+        <li><a href="Form.php">Form</a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
           <ul class="dropdown-menu">
