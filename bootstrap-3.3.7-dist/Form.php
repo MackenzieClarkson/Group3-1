@@ -27,6 +27,7 @@
 
     <!-- Custom styles for this template -->
   <!--   This links to all of the selectors required by the lab outline     -->
+  <?php ob_start();?>
   </head>
   <body>
 <!-- NAVBAR================================================== -->
@@ -89,7 +90,7 @@
 
 <div class="container">
 
-<form class="form-horizontal" name="signinForm" id="signinForm">
+<form method="post" action="form.php"class="form-horizontal" name="signinForm" id="signinForm" >
 
   <div class="form-group">
     <label for="username" class="col-sm-2 control-label">Name</label>
@@ -129,9 +130,8 @@
       <label for="inlineCheckbox[]" class="col-sm-2 control-label">Favourite Sport</label>
       <div class="col-sm-10" >
         <div class="checkbox">
-        <label><input type="checkbox" name="inlineCheckbox[]" id="inlineCheckbox[]" value="option1"> 1 </label>
-        <label><input type="checkbox" name="inlineCheckbox[]" id="inlineCheckbox[]" value="option2"> 2 </label>
-        <label><input type="checkbox" name="inlineCheckbox[]" id="inlineCheckbox[]" value="option3"> 3 </label>
+        <label><input type="checkbox" name="inlineCheckbox[]" id="inlineCheckbox[]" value="0"> 1 </label>
+        <label><input type="checkbox" name="inlineCheckbox[]" id="inlineCheckbox[]" value="1"> 2 </label>
         </div>
       </div>
   </div>
@@ -140,9 +140,9 @@
     <label for="inlineRadioOptions" class="col-sm-2 control-label">Favourite Sport</label>
     <div class="col-sm-10">
       <div class="radio">
-      <label><input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> 1 </label>
-      <label><input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> 2 </label>
-      <label><input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3"> 3 </label>
+      <label><input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="1"> 1 </label>
+      <label><input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="2"> 2 </label>
+      <label><input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="3"> 3 </label>
       </div>
     </div>
   </div>
@@ -263,6 +263,89 @@
           });
       });
     </script>
+    <?php
+    $db = new mysqli('localhost', 'root', '', 'lab');
 
+    if($db->connect_errno > 0){
+        echo "ERROR";
+        die('Unable to connect to database [' . $db->connect_error . ']');
+    }
+
+    $sql = $db->prepare("INSERT INTO sample(name, email, password, dropdown, checkbox, " .
+                        "radio, textarea) VALUES (?, ?, ?, ?, ?, ?, ?)");
+
+    if (isset($_POST['formSubmit']) and $_SERVER["REQUEST_METHOD"] == "POST" and !isset($bool)) {
+        // collect value of input field
+
+        $email = $_REQUEST['email'];
+        $insecure_pass = $_REQUEST['password']; // This password needs to be securely hashed
+        $dropdown = $_REQUEST['choose1']; // This is one of the dropdown selection options
+        $checkbox =$_REQUEST['inlineCheckbox'];  // This is a boolean value 0 or 1
+        $radio = $_REQUEST['inlineRadioOptions'];   // This is an integer value
+        $message = $_REQUEST['text1'];
+        $name = $_REQUEST['username'];
+        $bool = "something";
+
+        $password = password_hash($insecure_pass, PASSWORD_DEFAULT);
+
+        // Bind the parameters to the SQL query above, s is a string i is an integer
+        $sql->bind_param("ssssiis", $name, $email, $password, $dropdown, $checkbox, $radio, $message);
+
+        // Execute the query, inserting the data
+        $sql->execute();
+
+        // Close the connection
+        $sql->close();
+        $db->close();
+
+
+
+        header("location: Form.php");
+
+
+    }
+
+    $db = new mysqli('localhost', 'root', '', 'lab');
+
+    // You should see sucess if you can connect
+    if($db->connect_errno > 0){
+        echo "ERROR";
+        die('Unable to connect to database [' . $db->connect_error . ']');
+    }
+    else {
+        echo '<br />';
+    }
+
+    // Query to return data from your database
+    $result = $db->query("SELECT * FROM sample");
+
+    // check if the query succeeded
+    if (!$result) {
+        die('There was an error running the query[' . $db->error . ']');
+    }
+
+    // Display the results of the query for each row
+
+    while ($row = $result->fetch_assoc()) {
+
+        echo            '<div class="container">
+                          <div class="jumbotron">
+                            <h3 class="text-warning">'.$row['name'].'</h3>
+                            <h4 class = "text-success">'.$row['email'].'</h4>
+                            <p text-primary>'.$row['dropdown'].$row['checkbox'] .$row['textarea'] .'
+                            </p>
+
+                          </div>.
+                        </div>';
+
+
+    }
+
+    // Close the database connection
+    $result->free();
+    $db->close();
+
+
+    ?>
   </body>
 </html>
