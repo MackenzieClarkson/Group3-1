@@ -130,26 +130,26 @@
   </div>
 
   <div class="form-group">
-      <label for="inlineCheckbox[]" class="col-sm-2 control-label">Gender</label>
-      <div class="col-sm-10" >
-        <div class="checkbox">
-        <label><input type="checkbox" name="inlineCheckbox[]" id="inlineCheckbox[]" value="0"> Male </label>
-        <label><input type="checkbox" name="inlineCheckbox[]" id="inlineCheckbox[]" value="1"> Female </label>
-        </div>
-      </div>
-  </div>
-
-  <div class="form-group">
-    <label for="inlineRadioOptions" class="col-sm-2 control-label">Notifications</label>
+    <label for="inlineRadioOptions" class="col-sm-2 control-label">Gender</label>
     <div class="col-sm-10">
       <div class="radio">
-      <label><input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="1"> Hockey </label>
-      <label><input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="2"> Baseball </label>
-      <label><input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="3"> Basketball </label>
-      <label><input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="4"> Football </label>
-      <label><input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="5"> Soccer </label>
+      <label><input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="1">Male</label>
+      <label><input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="2">Female</label>
       </div>
     </div>
+  </div>
+  
+  <div class="form-group">
+      <label for="inlineCheckbox[]" class="col-sm-2 control-label">Notifications</label>
+      <div class="col-sm-10" >
+        <div class="checkbox">
+        <label><input type="checkbox" name="inlineCheckbox[]" id="inlineCheckbox[]" value="1">Hockey </label>
+        <label><input type="checkbox" name="inlineCheckbox[]" id="inlineCheckbox[]" value="2">Baseball</label>
+        <label><input type="checkbox" name="inlineCheckbox[]" id="inlineCheckbox[]" value="3">Basketball</label>
+        <label><input type="checkbox" name="inlineCheckbox[]" id="inlineCheckbox[]" value="4">Football</label>
+        <label><input type="checkbox" name="inlineCheckbox[]" id="inlineCheckbox[]" value="5">Soccer</label>
+        </div>
+      </div>
   </div>
 
   <div class="form-group">
