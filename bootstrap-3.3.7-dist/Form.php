@@ -117,32 +117,37 @@
     <label for="choose1" class="col-sm-2 control-label">Favourite Sport</label>
     <div class="col-sm-10">
       <select class="form-control" id="choose1" name="choose1">
-        <option>Favourite Sport</option>
+        <optgroup label="Favourite Sport">
+        <option value="" selected disabled>Select one</option>
         <option value="1">Hockey</option>
         <option value="2">Baseball</option>
         <option value="3">Basketball</option>
         <option value="4">Football</option>
+        <option value="5">Soccer</option>
+      </optgroup>
       </select>
     </div>
   </div>
 
   <div class="form-group">
-      <label for="inlineCheckbox[]" class="col-sm-2 control-label">Favourite Sport</label>
+      <label for="inlineCheckbox[]" class="col-sm-2 control-label">Gender</label>
       <div class="col-sm-10" >
         <div class="checkbox">
-        <label><input type="checkbox" name="inlineCheckbox[]" id="inlineCheckbox[]" value="0"> 1 </label>
-        <label><input type="checkbox" name="inlineCheckbox[]" id="inlineCheckbox[]" value="1"> 2 </label>
+        <label><input type="checkbox" name="inlineCheckbox[]" id="inlineCheckbox[]" value="0"> Male </label>
+        <label><input type="checkbox" name="inlineCheckbox[]" id="inlineCheckbox[]" value="1"> Female </label>
         </div>
       </div>
   </div>
 
   <div class="form-group">
-    <label for="inlineRadioOptions" class="col-sm-2 control-label">Favourite Sport</label>
+    <label for="inlineRadioOptions" class="col-sm-2 control-label">Notifications</label>
     <div class="col-sm-10">
       <div class="radio">
-      <label><input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="1"> 1 </label>
-      <label><input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="2"> 2 </label>
-      <label><input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="3"> 3 </label>
+      <label><input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="1"> Hockey </label>
+      <label><input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="2"> Baseball </label>
+      <label><input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="3"> Basketball </label>
+      <label><input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="4"> Football </label>
+      <label><input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="5"> Soccer </label>
       </div>
     </div>
   </div>
@@ -332,7 +337,7 @@
                           <div class="jumbotron">
                             <h3 class="text-warning">'.$row['name'].'</h3>
                             <h4 class = "text-success">'.$row['email'].'</h4>
-                            <p text-primary>'.$row['dropdown'].$row['checkbox'] .$row['textarea'] .'
+                            <p class="text-primary">'.$row['textarea'] .'
                             </p>
 
                           </div>.
