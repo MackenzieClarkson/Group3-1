@@ -241,7 +241,7 @@
       });
     </script>
     <?php
-    $db = new mysqli('localhost', 'root', '', 'lab');
+    $db = new mysqli('sofe2800.cgycyymtwoys.us-west-2.rds.amazonaws.com:3306', 'admin', 'sofe2800project', 'lab');
 
     if($db->connect_errno > 0){
         echo "ERROR";
