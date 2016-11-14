@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-    <title>index lab1</title>
+    <title>Toronto Sports Fans</title>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
     <link href="css/formValidation.min.css" rel="stylesheet">
     <link href="css/carousel.css" rel="stylesheet" type="text/css">
@@ -28,6 +28,7 @@
 
     <!-- Custom styles for this template -->
     <!--   This links to all of the selectors required by the lab outline     -->
+    <?php ob_start();?>
 </head>
 <body>
     <!-- NAVBAR================================================== -->
@@ -51,40 +52,12 @@
                     <li><a href="#head1">News</a></li>
                     <li><a href="#head3">Highlights</a></li>
                     <li><a href="#head4">Stats</a></li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">Action</a></li>
-                            <li><a href="#">Another action</a></li>
-                            <li><a href="#">Something else here</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="#">Separated link</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="#">One more separated link</a></li>
-                        </ul>
-                    </li>
                 </ul>
-                <form class="navbar-form navbar-left">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Search">
-                    </div>
-                    <button type="submit" class="btn btn-default">Submit</button>
-                </form>
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="Form.php">Form</a></li>
                     <li><a href="plots.php">Plots</a></li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">Action</a></li>
-                            <li><a href="#">Another action</a></li>
-                            <li><a href="#">Something else here</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="#">Separated link</a></li>
-                        </ul>
-                    </li>
                 </ul>
-            </div>
+            </div
             <!-- /.navbar-collapse -->
         </div>
         <!-- /.container-fluid -->
@@ -283,38 +256,51 @@
                 <div class="row featurette">
 
                     <table class="table table-bordered table-hover">
-
-
                         <tbody>
-
                             <tr class="warning">
-                                <th class="text-center">
-                                variable heading1</td>
-          <th class="text-center">
-                                variable heading1</td>
-          <th class="text-center">
-                                variable heading1</td>
-          <th class="text-center">
-                                variable heading1</td>
+                                <th class="text-center col-md-2">
+                                Name</td>
+                                <th class="text-center col-md-4">
+                                Email</td>
+                                <th class="text-center col-md-6">
+                                Comment</td>
                             </tr>
-
-                            <tr>
-                                <td class="text-center lead">Information stored in the database</td>
-                                <td class="text-center lead">Information stored in the database</td>
-                                <td class="text-center lead">Information stored in the database.</td>
-                                <td class="text-center lead">Information stored in the database</td>
-                            </tr>
-                            <tr>
-                                <td class="text-center lead">Information stored in the database</td>
-                                <td class="text-center lead">Information stored in the database</td>
-                                <td class="text-center lead">Information stored in the database.</td>
-                                <td class="text-center lead">Information stored in the database</td>
-                            </tr>
-
-
                         </tbody>
-                    </table>
+                      <?php
+                        $db = new mysqli('localhost', 'root', '', 'lab');
 
+                        // You should see sucess if you can connect
+                        if($db->connect_errno > 0){
+                            echo "ERROR";
+                            die('Unable to connect to database [' . $db->connect_error . ']');
+                        }
+                        else {
+                            echo '<br />';
+                        }
+
+                        // Query to return data from your database
+                        $result = $db->query("SELECT * FROM sample");
+
+                        // check if the query succeeded
+                        if (!$result) {
+                            die('There was an error running the query[' . $db->error . ']');
+                        }
+
+                        // Display the results of the query for each row
+
+                        while ($row = $result->fetch_assoc()) {
+                            echo            '<tr>
+                                              <td class="text-center lead col-md-2">'.$row['name'].'</td>
+                                              <td class="text-center lead col-md-4">'.$row['email'].'</td>
+                                              <td class="text-center"  col-md-3>'.$row['textarea'].'</td>
+                                            <tr>';
+                        }
+
+                        // Close the database connection
+                        $result->free();
+                        $db->close();
+                      ?>
+                    </table>
                 </div>
 
                 <hr class="featurette-divider">
