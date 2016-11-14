@@ -51,38 +51,10 @@
         <li><a href="index.php#head1">News</a></li>
         <li><a href="index.php#head3">Highlights</a></li>
         <li><a href="index.php#head4">Stats</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">One more separated link</a></li>
-          </ul>
-        </li>
       </ul>
-      <form class="navbar-form navbar-left">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
-        </div>
-        <button type="submit" class="btn btn-default">Submit</button>
-      </form>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#">Link</a></li>
         <li><a href="plots.php">Plots</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-          </ul>
-        </li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
@@ -138,7 +110,7 @@
       </div>
     </div>
   </div>
-  
+
   <div class="form-group">
       <label for="inlineCheckbox[]" class="col-sm-2 control-label">Notifications</label>
       <div class="col-sm-10" >
@@ -303,54 +275,8 @@
         $sql->close();
         $db->close();
 
-
-
-        header("location: Form.php");
-
-
+        header("location: index.php#head4");
     }
-
-    $db = new mysqli('localhost', 'root', '', 'lab');
-
-    // You should see sucess if you can connect
-    if($db->connect_errno > 0){
-        echo "ERROR";
-        die('Unable to connect to database [' . $db->connect_error . ']');
-    }
-    else {
-        echo '<br />';
-    }
-
-    // Query to return data from your database
-    $result = $db->query("SELECT * FROM sample");
-
-    // check if the query succeeded
-    if (!$result) {
-        die('There was an error running the query[' . $db->error . ']');
-    }
-
-    // Display the results of the query for each row
-
-    while ($row = $result->fetch_assoc()) {
-
-        echo            '<div class="container">
-                          <div class="jumbotron">
-                            <h3 class="text-warning">'.$row['name'].'</h3>
-                            <h4 class = "text-success">'.$row['email'].'</h4>
-                            <p class="text-primary">'.$row['textarea'] .'
-                            </p>
-
-                          </div>.
-                        </div>';
-
-
-    }
-
-    // Close the database connection
-    $result->free();
-    $db->close();
-
-
     ?>
   </body>
 </html>
