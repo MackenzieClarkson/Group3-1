@@ -62,7 +62,7 @@
 
 <div class="container">
 
-<form method="post" action="form.php"class="form-horizontal" name="signinForm" id="signinForm" >
+<form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>"class="form-horizontal" name="signinForm" id="signinForm" >
 
   <div class="form-group">
     <label for="username" class="col-sm-2 control-label">Name</label>
