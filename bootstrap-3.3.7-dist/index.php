@@ -226,11 +226,11 @@
                                     Canada to erase all doubt. The end result was a second straight World Cup of Hockey crown, third straight
                                     best-on-best title and 16th consecutive victory under such circumstance.
                     </p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="col-md-6">
+
+
+                <div class="row">
+
+                    <
                         <ul class="lead nodot ">
                             <li>Canada won 2-1 in the final game against Europe
                             </li>
@@ -240,9 +240,9 @@
 
                             <li></br>Second straight World Cup championship for Canada
                             </li>
-                    </div>
-                </div>
-
+                  </div>
+                  </div>
+              </div>
 
 
                 <hr id="head4" class="featurette-divider"></hr>
@@ -327,5 +327,15 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/framework/bootstrap.min.js"></script>
     <script src="js/formValidation.min.js"></script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-87351461-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>
 </body>
 </html>
