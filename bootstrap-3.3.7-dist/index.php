@@ -28,7 +28,6 @@
 
     <!-- Custom styles for this template -->
     <!--   This links to all of the selectors required by the lab outline     -->
-    <?php ob_start();?>
 </head>
 <body>
     <!-- NAVBAR================================================== -->
@@ -314,7 +313,11 @@
     <!-- FOOTER -->
     <footer>
         <p class="pull-right"><a href="#">Back to top</a></p>
-        <p>&copy; 2016 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+        <p>&copy; 2016 Company, Inc. &middot;
+          <a href="#">Privacy</a> &middot;
+          <a href="#">Terms</a> &middot;
+          <a href="AboutUs.html">About Us</a>
+        </p>
     </footer>
     <!-- Bootstrap core JavaScript
     ================================================== -->
