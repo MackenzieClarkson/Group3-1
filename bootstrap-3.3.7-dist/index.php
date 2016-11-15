@@ -68,8 +68,8 @@
 
     <!-- Carousel
         ================================================== -->
-    <div class="container marketing">
-        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <div class="container marketing responsive">
+        <div id="myCarousel" class="carousel slide responsive" data-ride="carousel">
             <!-- Indicators -->
             <ol class="carousel-indicators">
                 <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -84,7 +84,7 @@
                         <div class="carousel-caption">
                             <h1>Toronto Sports Fans!</h1>
                             <p>Sign up for live updates!</p>
-                            <p><a class="btn btn-lg btn-primary" href="#head2" role="button">Sign up today</a></p>
+                            <p><a class="btn btn-lg btn-primary" href="Form.php" role="button">Sign up today</a></p>
                         </div>
                     </div>
                 </div>
@@ -129,7 +129,7 @@
     ================================================== -->
         <!-- Wrap the rest of the page in another container to center all the content. -->
 
-        <div class="jumbotron">
+        <div class="jumbotron responsive">
 
             <!-- Three columns of text below the carousel -->
             <div class="row featurette">
@@ -228,7 +228,7 @@
                     </p>
                 </div>
             </div>
-            <div class="row">
+            <div class="row featurette">
                 <div class="col-md-6">
                     <div class="col-md-6">
                         <ul class="lead nodot ">
@@ -242,64 +242,67 @@
                             </li>
                     </div>
                 </div>
+              </div>
 
 
 
-                <hr id="head4" class="featurette-divider"></hr>
+            <hr id="head4" class="featurette-divider"></hr>
 
-                <div class="row featurette">
-
+              <div class="row featurette">
+                <div class="col-md-12">
                     <h1 class="featurette-heading">Stats <span class="text-muted">and Scores</span></h1>
                     <p class="lead pad-below">A stats table that allows you to look up stats for your favorite teams.  Anything to lineups on gameday, to recorded stats of individual players</p>
                 </div>
-                <div class="row featurette">
+              </div>
+              <div class="row featurette">
 
-                    <table class="table table-bordered table-hover">
-                        <tbody>
-                            <tr class="warning">
-                                <th class="text-center col-md-2">
-                                Name</td>
-                                <th class="text-center col-md-4">
-                                Email</td>
-                                <th class="text-center col-md-6">
-                                Comment</td>
-                            </tr>
-                        </tbody>
-                      <?php
-                        $db = new mysqli('localhost', 'root', '', 'lab');
+                  <div class="table-responsive">
 
-                        // You should see sucess if you can connect
-                        if($db->connect_errno > 0){
-                            echo "ERROR";
-                            die('Unable to connect to database [' . $db->connect_error . ']');
-                        }
-                        else {
-                            echo '<br />';
-                        }
+                      <table class="table table-bordered table-hover">
+                          <tbody>
+                              <tr class="warning">
+                                  <th class="text-center col-md-2 col-sm-1 col-xs-1">
+                                  Name</td>
+                                  <th class="text-center col-md-4 col-sm-2 col-xs-2">
+                                  Email</td>
+                                  <th class="text-center col-md-6 col-sm-3 col-xs-3">
+                                  Comment</td>
+                              </tr>
+                          </tbody>
+                        <?php
+                          $db = new mysqli('localhost', 'root', '', 'lab');
 
-                        // Query to return data from your database
-                        $result = $db->query("SELECT * FROM sample");
+                          // You should see sucess if you can connect
+                          if($db->connect_errno > 0){
+                              echo "ERROR";
+                              die('Unable to connect to database [' . $db->connect_error . ']');
+                          }
 
-                        // check if the query succeeded
-                        if (!$result) {
-                            die('There was an error running the query[' . $db->error . ']');
-                        }
+                          // Query to return data from your database
+                          $result = $db->query("SELECT * FROM sample");
 
-                        // Display the results of the query for each row
+                          // check if the query succeeded
+                          if (!$result) {
+                              die('There was an error running the query[' . $db->error . ']');
+                          }
 
-                        while ($row = $result->fetch_assoc()) {
-                            echo            '<tr>
-                                              <td class="text-center lead col-md-2">'.$row['name'].'</td>
-                                              <td class="text-center lead col-md-4">'.$row['email'].'</td>
-                                              <td class="text-center"  col-md-3>'.$row['textarea'].'</td>
-                                            <tr>';
-                        }
+                          // Display the results of the query for each row
 
-                        // Close the database connection
-                        $result->free();
-                        $db->close();
-                      ?>
-                    </table>
+                          while ($row = $result->fetch_assoc()) {
+                              echo            '<tr>
+                                                <td class="text-center lead col-md-2">'.$row['name'].'</td>
+                                                <td class="text-center lead col-md-4">'.$row['email'].'</td>
+                                                <td class="text-center"  col-md-3>'.$row['textarea'].'</td>
+                                              <tr>';
+                          }
+
+                          // Close the database connection
+                          $result->free();
+                          $db->close();
+                        ?>
+                      </table>
+                    </div>
+
                 </div>
 
                 <hr class="featurette-divider">
@@ -312,12 +315,14 @@
 
     <!-- FOOTER -->
     <footer>
-        <p class="pull-right"><a href="#">Back to top</a></p>
-        <p>&copy; 2016 Company, Inc. &middot;
-          <a href="#">Privacy</a> &middot;
-          <a href="#">Terms</a> &middot;
-          <a href="AboutUs.html">About Us</a>
-        </p>
+        <div class="container">
+          <p class="pull-right"><a href="#">Back to top</a></p>
+          <p>&copy; 2016 Company, Inc. &middot;
+            <a href="#">Privacy</a> &middot;
+            <a href="#">Terms</a> &middot;
+            <a href="AboutUs.html">About Us</a>
+          </p>
+      </div>
     </footer>
     <!-- Bootstrap core JavaScript
     ================================================== -->
