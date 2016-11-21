@@ -62,7 +62,7 @@
 
 <div class="container">
 
-<form method="post" action="form.php"class="form-horizontal" name="signinForm" id="signinForm" >
+<form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>"class="form-horizontal" name="signinForm" id="signinForm" >
 
   <div class="form-group">
     <label for="username" class="col-sm-2 control-label">Name</label>
@@ -169,6 +169,16 @@
       <script src="js/framework/bootstrap.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-87351461-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+    <script>
       $(document).ready(function() {
           $('#signinForm').formValidation({
               framework: 'bootstrap',
@@ -245,7 +255,7 @@
       });
     </script>
     <?php
-    $db = new mysqli('localhost', 'root', '', 'lab');
+    $db = new mysqli('sofe2800.cgycyymtwoys.us-west-2.rds.amazonaws.com', 'admin', 'sofe2800project', 'lab');
 
     if($db->connect_errno > 0){
         echo "ERROR";

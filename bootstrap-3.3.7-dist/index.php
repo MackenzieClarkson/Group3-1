@@ -226,11 +226,19 @@
                                     Canada to erase all doubt. The end result was a second straight World Cup of Hockey crown, third straight
                                     best-on-best title and 16th consecutive victory under such circumstance.
                     </p>
+<<<<<<< HEAD
                 </div>
             </div>
             <div class="row featurette">
                 <div class="col-md-6">
                     <div class="col-md-6">
+=======
+
+
+                <div class="row">
+
+                    <
+>>>>>>> refs/remotes/origin/master
                         <ul class="lead nodot ">
                             <li>Canada won 2-1 in the final game against Europe
                             </li>
@@ -240,10 +248,16 @@
 
                             <li></br>Second straight World Cup championship for Canada
                             </li>
+<<<<<<< HEAD
                     </div>
                 </div>
               </div>
 
+=======
+                  </div>
+                  </div>
+              </div>
+>>>>>>> refs/remotes/origin/master
 
 
             <hr id="head4" class="featurette-divider"></hr>
@@ -253,6 +267,7 @@
                     <h1 class="featurette-heading">Stats <span class="text-muted">and Scores</span></h1>
                     <p class="lead pad-below">A stats table that allows you to look up stats for your favorite teams.  Anything to lineups on gameday, to recorded stats of individual players</p>
                 </div>
+<<<<<<< HEAD
               </div>
               <div class="row featurette">
 
@@ -303,6 +318,56 @@
                       </table>
                     </div>
 
+=======
+                <div class="row featurette">
+
+                    <table class="table table-bordered table-hover">
+                        <tbody>
+                            <tr class="warning">
+                                <th class="text-center col-md-2">
+                                Name</td>
+                                <th class="text-center col-md-4">
+                                Email</td>
+                                <th class="text-center col-md-6">
+                                Comment</td>
+                            </tr>
+                        </tbody>
+                      <?php
+                        $db = new mysqli('sofe2800.cgycyymtwoys.us-west-2.rds.amazonaws.com', 'admin', 'sofe2800project', 'lab');
+
+                        // You should see sucess if you can connect
+                        if($db->connect_errno > 0){
+                            echo "ERROR";
+                            die('Unable to connect to database [' . $db->connect_error . ']');
+                        }
+                        else {
+                            echo '<br />';
+                        }
+
+                        // Query to return data from your database
+                        $result = $db->query("SELECT * FROM sample");
+
+                        // check if the query succeeded
+                        if (!$result) {
+                            die('There was an error running the query[' . $db->error . ']');
+                        }
+
+                        // Display the results of the query for each row
+
+                        while ($row = $result->fetch_assoc()) {
+                            echo            '<tr>
+                                              <td class="text-center lead col-md-2">'.$row['name'].'</td>
+                                              <td class="text-center lead col-md-4">'.$row['email'].'</td>
+                                              <td class="text-center"  col-md-3>'.$row['textarea'].'</td>
+                                            <tr>';
+                        }
+
+                        // Close the database connection
+                        $result->free();
+                        $db->close();
+                      ?>
+                    </table>
+>>>>>>> refs/remotes/origin/master
                 </div>
 
                 <hr class="featurette-divider">
@@ -332,5 +397,15 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/framework/bootstrap.min.js"></script>
     <script src="js/formValidation.min.js"></script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-87351461-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>
 </body>
 </html>
