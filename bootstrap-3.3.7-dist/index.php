@@ -68,8 +68,8 @@
 
     <!-- Carousel
         ================================================== -->
-    <div class="container marketing responsive">
-        <div id="myCarousel" class="carousel slide responsive" data-ride="carousel">
+    <div class="container marketing">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
             <!-- Indicators -->
             <ol class="carousel-indicators">
                 <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -84,7 +84,7 @@
                         <div class="carousel-caption">
                             <h1>Toronto Sports Fans!</h1>
                             <p>Sign up for live updates!</p>
-                            <p><a class="btn btn-lg btn-primary" href="Form.php" role="button">Sign up today</a></p>
+                            <p><a class="btn btn-primary btn-block" href="Form.php" role="button">Sign up today</a></p>
                         </div>
                     </div>
                 </div>
@@ -95,7 +95,7 @@
                     <div class="container">
                         <div class="carousel-caption">
                             <h1>Stats and Scores</h1>
-                            <p><a class="btn btn-lg btn-primary" href="#head4" role="button">Click Here for Latest Stats</a></p>
+                            <p><a class="btn btn-block btn-primary" href="#head4" role="button">Click Here for Latest Stats</a></p>
                         </div>
                     </div>
 
@@ -107,7 +107,7 @@
                         <div class="carousel-caption">
                             <h1>Pictures and Videos of the Action</h1>
                             <p>See this week's action!</p>
-                            <p><a class="btn btn-lg btn-primary" href="#head3" role="button">Browse gallery</a></p>
+                            <p><a class="btn btn-block btn-primary" href="#head3" role="button">Browse gallery</a></p>
                         </div>
                     </div>
                 </div>
@@ -226,19 +226,16 @@
                                     Canada to erase all doubt. The end result was a second straight World Cup of Hockey crown, third straight
                                     best-on-best title and 16th consecutive victory under such circumstance.
                     </p>
-<<<<<<< HEAD
+
                 </div>
             </div>
             <div class="row featurette">
                 <div class="col-md-6">
                     <div class="col-md-6">
-=======
+
 
 
                 <div class="row">
-
-                    <
->>>>>>> refs/remotes/origin/master
                         <ul class="lead nodot ">
                             <li>Canada won 2-1 in the final game against Europe
                             </li>
@@ -248,16 +245,14 @@
 
                             <li></br>Second straight World Cup championship for Canada
                             </li>
-<<<<<<< HEAD
                     </div>
                 </div>
               </div>
 
-=======
+
                   </div>
-                  </div>
-              </div>
->>>>>>> refs/remotes/origin/master
+
+
 
 
             <hr id="head4" class="featurette-divider"></hr>
@@ -267,59 +262,11 @@
                     <h1 class="featurette-heading">Stats <span class="text-muted">and Scores</span></h1>
                     <p class="lead pad-below">A stats table that allows you to look up stats for your favorite teams.  Anything to lineups on gameday, to recorded stats of individual players</p>
                 </div>
-<<<<<<< HEAD
+
               </div>
               <div class="row featurette">
 
-                  <div class="table-responsive">
-
-                      <table class="table table-bordered table-hover">
-                          <tbody>
-                              <tr class="warning">
-                                  <th class="text-center col-md-2 col-sm-1 col-xs-1">
-                                  Name</td>
-                                  <th class="text-center col-md-4 col-sm-2 col-xs-2">
-                                  Email</td>
-                                  <th class="text-center col-md-6 col-sm-3 col-xs-3">
-                                  Comment</td>
-                              </tr>
-                          </tbody>
-                        <?php
-                          $db = new mysqli('localhost', 'root', '', 'lab');
-
-                          // You should see sucess if you can connect
-                          if($db->connect_errno > 0){
-                              echo "ERROR";
-                              die('Unable to connect to database [' . $db->connect_error . ']');
-                          }
-
-                          // Query to return data from your database
-                          $result = $db->query("SELECT * FROM sample");
-
-                          // check if the query succeeded
-                          if (!$result) {
-                              die('There was an error running the query[' . $db->error . ']');
-                          }
-
-                          // Display the results of the query for each row
-
-                          while ($row = $result->fetch_assoc()) {
-                              echo            '<tr>
-                                                <td class="text-center lead col-md-2">'.$row['name'].'</td>
-                                                <td class="text-center lead col-md-4">'.$row['email'].'</td>
-                                                <td class="text-center"  col-md-3>'.$row['textarea'].'</td>
-                                              <tr>';
-                          }
-
-                          // Close the database connection
-                          $result->free();
-                          $db->close();
-                        ?>
-                      </table>
-                    </div>
-
-=======
-                <div class="row featurette">
+                <div class="table-responsive">
 
                     <table class="table table-bordered table-hover">
                         <tbody>
@@ -339,9 +286,6 @@
                         if($db->connect_errno > 0){
                             echo "ERROR";
                             die('Unable to connect to database [' . $db->connect_error . ']');
-                        }
-                        else {
-                            echo '<br />';
                         }
 
                         // Query to return data from your database
@@ -367,7 +311,6 @@
                         $db->close();
                       ?>
                     </table>
->>>>>>> refs/remotes/origin/master
                 </div>
 
                 <hr class="featurette-divider">
@@ -375,6 +318,8 @@
         </div>
     </div>
 
+  </div>
+  </div>
     <!-- /END THE FEATURETTES -->
 
 
